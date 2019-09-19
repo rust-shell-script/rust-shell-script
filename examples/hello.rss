@@ -1,0 +1,22 @@
+cmd error_command() {
+    do_something_failed
+}
+
+fun bad_greeting(name) {
+    info "Running error_command ..."
+    error_command
+    output "hello, ${name}!"
+}
+
+fun good_greeting(name) {
+    info "Running good_command ..."
+    output "hello, ${name}!"
+}
+
+cmd main() {
+    let bad_ans = $(bad_greeting "rust-shell-script")
+    info "${bad_ans}"
+    let good_ans = $(good_greeting "rust-shell-script")
+    info "${good_ans}"
+    return 0
+}
