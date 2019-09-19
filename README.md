@@ -108,7 +108,7 @@ FATAL: Running command (bad_ans=$(_call bad_greeting "rust-shell-script")) near 
 ### compiling
 ```bash
 tao@sophia:~/rust-shell-script$ target/debug/rust-shell-script -t rust examples/hello.rss 
-Generating bash script to examples/hello.rs ...
+Generating rust code to examples/hello.rs ...
 ```
 
 ### generated rust code
@@ -133,9 +133,9 @@ fn good_greeting(name: &str) -> FunResult {
 }
 
 fn main() -> CmdResult {
-    let bad_ans = bad_greeting("rust-shell-script")?;;
+    let bad_ans = bad_greeting("rust-shell-script")?;
     info!("{}", bad_ans)?;
-    let good_ans = good_greeting("rust-shell-script")?;;
+    let good_ans = good_greeting("rust-shell-script")?;
     info!("{}", good_ans)?;
     return Ok(())
 }
