@@ -17,7 +17,7 @@ macro_rules! output {
 }
 
 pub fn gen_code(stmts: &Vec<Stmt>, sym_table: &HashSet<&String>, file: &str) {
-    eprintln!("Generating bash script to {} ...", file);
+    eprintln!("Generating rust code to {} ...", file);
     let mut file = fs::OpenOptions::new()
         .create(true)
         .write(true)

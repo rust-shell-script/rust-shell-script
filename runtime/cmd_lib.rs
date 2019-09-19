@@ -34,16 +34,17 @@ macro_rules! run_fun {
     }
 }
 
-pub fn info<S>(msg: S) where S: Into<String> + Display {
+pub fn info<S>(msg: S) -> CmdResult where S: Into<String> + Display {
     eprintln!("{}", msg);
+    Ok(())
 }
 
-pub fn output<S>(msg: S) -> String where S: Into<String> {
-    msg.into()
+pub fn output<S>(msg: S) -> FunResult where S: Into<String> {
+    Ok(msg.into())
 }
 
 pub fn run_cmd(full_command: &[&str]) -> CmdResult {
-    info!("Running {:?} ...", full_command);
+    info!("Running {:?} ...", full_command)?;
     let command = &full_command[0];
     let status = process::Command::new(command)
                                   .args(&full_command[1..])
@@ -56,7 +57,7 @@ pub fn run_cmd(full_command: &[&str]) -> CmdResult {
 }
 
 pub fn run_fun(full_command: &[&str]) -> FunResult {
-    info!("Running {:?} ...", full_command);
+    info!("Running {:?} ...", full_command)?;
     let command = &full_command[0];
     let output = process::Command::new(command)
                                   .args(&full_command[1..])
