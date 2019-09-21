@@ -22,7 +22,6 @@ pub fn gen_code(stmts: &Vec<Stmt>, sym_table: &HashSet<&String>, file: &str) {
         .create(true)
         .write(true)
         .truncate(true)
-        .mode(0o755)
         .open(file)
         .expect("create file for writing failed");
 
