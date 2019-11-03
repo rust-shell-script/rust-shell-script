@@ -10,7 +10,7 @@ $ cargo build
 
 # Example
 
-## Srouce file
+## Source file
 
 ```bash
 rust-shell-script$:~/rust-shell-script$ cat examples/hello.rss
