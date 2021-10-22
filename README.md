@@ -1,5 +1,5 @@
 # rust-shell-script
-Rustlike shell scripting language (WIP)
+~~Rustlike shell scripting language (WIP)~~  -> use [rust_cmd_lib](https://github.com/rust-shell-script/rust_cmd_lib) instead.
 
 Resilient & robust shell script, compiling to rust code/bash script
 
